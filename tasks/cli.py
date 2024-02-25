@@ -30,7 +30,9 @@ def handle_action():
 
 
 def handle_interrupt():
-    user_input = input("\nDo you want to export tasks (y/n)?")
-    if user_input == "y":
-        save_to_file(get_all_tasks(), "export")
+    exit_answer = input("\nDo you want to exit (y/n)?")
+    if exit_answer == "y":
+        export_answer = input("\nDo you want to export tasks (y/n)?")
+        if export_answer == "y":
+            save_to_file(get_all_tasks(), "export")
         return True
